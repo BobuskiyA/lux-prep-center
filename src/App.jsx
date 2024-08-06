@@ -4,6 +4,7 @@ import { Navigate, useLocation, useRoutes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import { Header } from "./components/Header/Header";
 import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   const element = useRoutes([
@@ -18,11 +19,15 @@ function App() {
           path: "about",
           element: <About />,
         },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
       ],
     },
     {
-      path: "/:catchAll", // Define a catch-all parameter
-      element: <Navigate to="/" replace />, // Navigate to the index page
+      path: "/:catchAll", 
+      element: <Navigate to="/" replace />,
     },
   ]);
 
