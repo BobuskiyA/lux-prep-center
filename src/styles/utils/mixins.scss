@@ -1,0 +1,29 @@
+@import "./variables";
+
+@mixin mq($size: $tablet, $type: '<', $size-next: null) {
+  @if ($type == '<') {
+    @media (max-width: #{$size}px) {
+      @content;
+    }
+  }
+
+  @if ($type == '>') {
+    @media (min-width: #{$size}px) {
+      @content;
+    }
+  }
+
+  @if ($type == '<>') {
+    @media screen and (min-width: #{$size}px) and (max-width: #{$size-next}px) {
+      @content;
+    }
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}

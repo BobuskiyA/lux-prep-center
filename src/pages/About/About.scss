@@ -1,0 +1,19 @@
+@import "/src/styles/global.scss";
+
+.about {
+  text-align: center;
+
+  &__title {
+    padding: 20px;
+    background: url("/public/Pages/About.jpg") no-repeat center;
+    color: $c-white;
+  }
+
+  h2 {
+    margin: 15px 200px 0;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+}

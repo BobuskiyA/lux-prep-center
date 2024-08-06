@@ -1,0 +1,28 @@
+@import "/src/styles/global.scss";
+
+.button {
+  width: 100%;
+  padding: 10px 30px;
+  transition: .3s ease;
+  transition-property: color background-color;
+  
+  &--black {
+    background-color: $c-black;
+    color: $c-white;
+    
+    @include hover {
+      background-color: $g-40;
+      color: $c-black;
+    }
+  }
+
+  &--white {
+    background-color: $c-white;
+    color: $c-black;
+    
+    @include hover {
+      background-color: $c-black;
+      color: $c-white;
+    }
+  }
+}

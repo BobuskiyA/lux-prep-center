@@ -1,0 +1,67 @@
+@import "/src/styles/global.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .header__logo {
+      width: 118px;
+      height: 39px;
+      object-fit: contain;
+    }
+  
+    .dropdown {
+      background-color: $c-black;
+      color: $c-white;
+      padding: 10px;
+      cursor: pointer;
+  
+      &__active {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+  
+      &__arrow {
+        width: 20px;
+        height: 21px;
+      }
+    }
+  }
+
+  .center {
+    display: flex;
+    gap: 40px;
+
+    .link--active {
+      text-decoration: underline;
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &__link {
+        transition: opacity .3s ease;
+
+        @include hover {
+          opacity: .6;
+        }
+      }
+    }
+  }
+}

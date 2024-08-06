@@ -1,0 +1,27 @@
+@import "./utils/typography";
+@import "./utils/variables";
+@import "./utils/mixins";
+
+body {
+  overflow-x: hidden;
+  opacity: 1;
+}
+
+a {
+  transition: color .3s ease;
+
+  @include hover {
+    color: $g-70;
+  }
+}
+
+.container {
+  max-width: calc(1440px - 220px);
+  padding-left: 110px;
+  padding-right: 110px;
+  margin: 0 auto;
+}
+
+.shadow {
+  color: $g-70;
+}
