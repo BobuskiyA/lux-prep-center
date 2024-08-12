@@ -20,6 +20,11 @@ a {
   padding-left: 110px;
   padding-right: 110px;
   margin: 0 auto;
+  
+  @include mq($tablet-large) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .shadow {

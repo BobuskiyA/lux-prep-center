@@ -1,0 +1,21 @@
+@import "/src/styles/global.scss";
+
+.how-works {
+  
+  &__title {
+    margin-top: 91px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px;
+    color: $c-white;
+    background: url("/public/Pages/HowWorks.jpg") no-repeat center;
+  }
+
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

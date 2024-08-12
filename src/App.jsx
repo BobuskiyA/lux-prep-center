@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import { Header } from "./components/Header/Header";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import HowWorks from "./pages/HowWorks/HowWorks";
 
 function App() {
   const element = useRoutes([
@@ -22,6 +23,10 @@ function App() {
         {
           path: "contact",
           element: <Contact />,
+        },
+        {
+          path: "how-works",
+          element: <HowWorks />,
         },
       ],
     },

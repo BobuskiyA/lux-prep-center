@@ -2,18 +2,26 @@
 
 .about {
   text-align: center;
-
+  
   &__title {
+    margin-top: 91px;
     padding: 20px;
     background: url("/public/Pages/About.jpg") no-repeat center;
     color: $c-white;
   }
 
   h2 {
-    margin: 15px 200px 0;
+    @include mq($desktop, ">") {
+      margin: 15px 200px 0;
+    }
   }
 
   p {
     margin-top: 15px;
+
+    @include mq($tablet-large) {
+      font-size: 24px;
+      line-height: 120%;
+    }
   }
 }

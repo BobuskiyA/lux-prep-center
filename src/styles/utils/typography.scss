@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -5,14 +7,30 @@ body {
 
   font-weight: 400;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 120%;
+  
+  @include mq($tablet-large) {
+    font-size: 20px;
+  }
+  
+  @include mq() {
+    font-size: 14px;
+  }
 }
 
 h1 {
   font-weight: 800;
   font-size: 58px;
-  line-height: 70px;
+  line-height: 100%;
   letter-spacing: -0.03em;
+
+  @include mq($tablet-large) {
+    font-size: 48px;
+  }
+
+  @include mq() {
+    font-size: 30px;
+  }
 }
 
 h2 {

@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $c-white;
 
   .left {
     display: flex;
@@ -40,6 +45,10 @@
     display: flex;
     gap: 40px;
 
+    @include mq($tablet-large ) {
+      display: none;
+    }
+
     .link--active {
       text-decoration: underline;
     }
@@ -49,6 +58,11 @@
     display: flex;
     gap: 20px;
     align-items: center;
+
+    @include mq($tablet-large ) {
+      display: none;
+    }
+
 
     .socials {
       display: flex;
