@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Header.scss";
 import { Link, NavLink } from "react-router-dom";
-import { Button } from "../Button/Button"
+import { Button } from "../Button/Button";
 import classNames from "classnames";
+
+import { useTranslation } from "react-i18next";
+import useLocalStorage from "../../hooks/use-localstorage";
+import i18n from "../../../i18n";
 
 const languages = ["En", "Ua", "Ru"];
 
@@ -27,17 +31,80 @@ const navigation = [
 ];
 
 export const Header = () => {
+  const { t } = useTranslation();
+  const [language, setLanguage] = useLocalStorage("language", "en");
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get("lang");
+
+    if (langParam && ["en", "ua"].includes(langParam)) {
+      setLanguage(langParam);
+      i18n.changeLanguage(langParam);
+    } else {
+      const pathSegments = window.location.pathname.split("/");
+      const lastSegment = pathSegments[pathSegments.length - 1];
+
+      if (lastSegment === "ua") {
+        setLanguage("ua");
+        i18n.changeLanguage("ua");
+      } else {
+        setLanguage("en");
+        i18n.changeLanguage("en");
+      }
+    }
+  }, []);
+
+  const updateUrl = (lang) => {
+    const baseUrl = window.location.origin;
+    const newUrl = `${baseUrl}/${lang}`;
+    window.history.replaceState(null, "", newUrl);
+  };
+
+  const handleLanguageChange = (selectedLanguage) => {
+    // Set language and save to local storage
+    i18n.changeLanguage(selectedLanguage);
+    setLanguage(selectedLanguage);
+    updateUrl(selectedLanguage);
+  };
+
   return (
     <header className="header container">
       <div className="left">
         <img src="/logo.svg" alt="" className="header__logo" />
         <DropDown />
+        <div className="header-trans">
+          <button
+            className={language === "en" ? "active" : ""}
+            onClick={() => handleLanguageChange("en")}
+          >
+            {t("EN")}
+          </button>
+          <span></span>
+          <button
+            className={language === "ua" ? "active" : ""}
+            onClick={() => handleLanguageChange("ua")}
+          >
+            {t("UA")}
+          </button>
+        </div>{" "}
+        <span></span>
+        <button
+          className={language === "ua" ? "active" : ""}
+          onClick={() => handleLanguageChange("ua")}
+        ></button>
       </div>
       <div className="center">
         {navigation.map((currLink, i) => (
-          <NavLink to={currLink.slug} key={i} className={({isActive}) => classNames({
-            "link--active": isActive
-          })}>
+          <NavLink
+            to={currLink.slug}
+            key={i}
+            className={({ isActive }) =>
+              classNames({
+                "link--active": isActive,
+              })
+            }
+          >
             {currLink.title}
           </NavLink>
         ))}
@@ -74,7 +141,7 @@ export const Header = () => {
           </a>
         </div>
         <Button href="/contact" classes="header__button">
-          Contact us
+          {t("Contact us")}
         </Button>
       </div>
     </header>
