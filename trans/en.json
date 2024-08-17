@@ -1,5 +1,176 @@
 {
-  "EN": "EN",
-  "UA": "UA",
-  "Contact us": "Contact us"
+  "Button Contact": "Contact us",
+  "Header": {
+    "navigation": [
+      {
+        "title": "Home",
+        "slug": "/"
+      },
+      {
+        "title": "About Us",
+        "slug": "/about"
+      },
+      {
+        "title": "Price",
+        "slug": "/price"
+      },
+      {
+        "title": "How does it work?",
+        "slug": "/how-works"
+      }
+    ]
+  },
+  "Home": {
+    "title": "PREP CENTER FOR UK AMAZON SELLERS",
+    "list": [
+      "Focused on Private Label",
+      "Specialized Private Label FBA Services",
+      "Handling Amazon UK Returns/Removals",
+      "Storage Solutions",
+      "Customized Services for Specific Needs"
+    ]
+  },
+  "About": {
+    "title": "About Us",
+    "subtitle": "Empowering E-commerce: Tailored Fulfillment Solutions for Every Stage",
+    "text": "We began as a small online business, giving us unique insights into your needs. From our experience in e-commerce, we recognized a gap in the B2B market for quality fulfillment services across online distribution channels. Our first major breakthrough came when we utilized high-quality 3PL services. <br /> <br /> This is why our services are tailored for online commerce businesses at various stages. Whether you are a newcomer or have significant experience and inventory, our offerings are designed to meet the needs of all retailers, optimized for cost-effectiveness and efficiency. <br /> <br /> A Lux Prep center for marketplaces primarily focuses on preparing products for sale on various online platforms, such as Amazon, eBay, Etsy, and others.These services enable sellers to streamline their operations, maintain compliance with marketplace requirements, and focus on other aspects of their business, such as marketing and customer service."
+  },
+  "HowWorks": {
+    "title": "How does it work?",
+    "subtitle": "We receive - We prepare - We ship",
+    "textList": [
+      "1. Receiving Inventory: Accepting shipments from manufacturers, wholesalers, or retailers.",
+      "2. Inspection: Checking the received products for damage, defects, or discrepancies against the order specifications.",
+      "3. Labeling: Applying necessary labels, including barcodes, FNSKU labels (for Amazon), and any other specific labeling required by the marketplace.",
+      "4. Packaging: Repacking products into suitable packaging for shipment to fulfillment centers or directly to customers. This includes poly bagging, bubble wrapping, and boxing items.",
+      "5. Kitting and Bundling: Combining multiple items into a single package or kit as required by the seller.",
+      "6. Compliance: Ensuring that products meet marketplace guidelines and regulations, such as safety standards and labeling requirements.",
+      "7. Inventory Management: Keeping accurate records of inventory levels, stock location, and movements within the prep center.",
+      "8. Shipping: Preparing and sending products to fulfillment centers, such as Amazon FBA (Fulfillment by Amazon) warehouses, or directly to customers.",
+      "9. Returns Processing: Handling returned items, including inspection, repackaging, and restocking or disposing of unsellable goods.",
+      "10. Documentation: Maintaining thorough records of all activities, including receipts, inspections, shipments, and inventory levels, often integrated with marketplace systems."
+    ]
+  },
+  "Price": {
+    "title": "Price",
+    "text": "Price shown are a guide only and may change depending on your specific requirements.Kindly get in touch for an accurate quote. <br /> <br /> The minimum order amount is <strong> £ 50, </strong> minimum quantity: <strong> 50 units/SKU. </strong>",
+    "Table": {
+      "parcel": {
+        "title": "Parcels Prices",
+        "list": [
+          {
+            "text": "Monthly fee subscription",
+            "priceText": "£0 / month"
+          },
+          {
+            "text": "Receiving damaged products inspection & data about the product expiration info, size and weight",
+            "priceText": "£0.20 / unit"
+          },
+          {
+            "text": "Photo Storage until 1 CBM size for shipping",
+            "priceText": "£30 / month per 1 CBM"
+          },
+          {
+            "text": "Prepare for shipping",
+            "priceText": "£5 / parcel"
+          },
+          {
+            "text": "FBA & UPS (2 labels size 4\"x6\") & \"Over 15kg\" warning labels (5 labels/parcel, size 57×32mm) (new prep cost from: 1st of March 2023)",
+            "priceText": "£10 / product"
+          },
+          {
+            "text": "Pictures with the products for unlock category",
+            "priceText": "£15/month/200 units"
+          },
+          {
+            "text": "Return from Amazon (use our UK SKU address for removals)",
+            "priceText": "£5 / unit"
+          },
+          {
+            "text": "New carton box - size small (max 30 cm longest side)",
+            "priceText": "£3"
+          },
+          {
+            "text": "New carton box - medium (max 45 cm longest side)",
+            "priceText": "£4"
+          },
+          {
+            "text": "New carton box - large (max 63 cm longest side)",
+            "priceText": "£5"
+          },
+          {
+            "text": "Apply New FNSKU Label (or other labels)",
+            "priceText": "£0.15 / unit"
+          },
+          {
+            "text": "Bundling (all inclusive: pack for max. 4 units + polybag + FNSKU label, + £0.05 for any extra unit)",
+            "priceText": "£0.60 / bundle"
+          },
+          {
+            "text": "Extra Fee for non-standard products: oversize (40-60cm), overweight (1 - 3kg), overprices (£40 - £100), electronics & electrical (personalized quote depending on the product)",
+            "priceText": "£0.5 / product"
+          },
+          {
+            "text": "Forwarding parcels (only for parcels that will not be opened for product prep and will be sent directly to amazon)",
+            "priceText": "£5 / unit"
+          },
+          {
+            "text": "Maximum units per box: 25 products; Storage medium & large period (1 CMB is the minimum volume that can be reserved, monthly paid in advance)",
+            "priceText": "£30 / month per 1 CBM"
+          }
+        ]
+      },
+      "pallet": {
+        "title": "Pallet Prices",
+        "list": [
+          {
+            "text": "Pallet \"all-inclusive\" offer: Shipping pallet from our depot to UK Amazon FBA depot, including Amazon standard size pallet (120 x 100 cm), parcels labeling and palletizing, wrapping foil, outside pallet shipping labels, Amazon booking, BOL (bill of lading) - Amazon maximum weight/height: 500 kg / 180 cm",
+            "priceText": "£75-£100"
+          },
+          {
+            "text": "Unloading or loading pallet",
+            "priceText": "£5 / pallet"
+          },
+          {
+            "text": "Amazon standard size pallet cost (120 x 100 cm)",
+            "priceText": "£8 / pallet"
+          },
+          {
+            "text": "Parcels labelling and palletizing",
+            "priceText": "£0.2 / box"
+          },
+          {
+            "text": "Wrapping foil & outside pallet shipping labels",
+            "priceText": "£4 / pallet"
+          },
+          {
+            "text": "Amazon Booking",
+            "priceText": "£8 / pallet"
+          },
+          {
+            "text": "BOL (bill of lading): edit and printing",
+            "priceText": "£4/bill"
+          }
+        ]
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contact us",
+    "subtitle": "Always by your side, ready to answer any question",
+    "form": {
+      "nameError": "Name is required",
+      "emailError": "Please enter a valid email",
+      "requiredText": "*required",
+      "buttonText": "Submit",
+      "succesText": "Thank you! <br /> We’re happy to receive your application. <br /> We’ll reach out to you in 1-3 working days via email",
+      "labels": {
+        "nameTitle": "Name*",
+        "emailTitle": "Email*",
+        "subjectTitle": "Subject",
+        "messageTitle": "Message",
+        "messagePlaceholder": "Hello! I would love to start work with you"
+      }
+    }
+  }
 }

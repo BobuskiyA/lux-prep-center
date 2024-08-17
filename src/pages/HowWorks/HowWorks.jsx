@@ -1,6 +1,9 @@
 import React from "react";
 
 import "./HowWorks.scss";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { animPage } from "../../helpers/animPage";
 
 const TextList = [
   "1. Receiving Inventory: Accepting shipments from manufacturers, wholesalers, or retailers.",
@@ -16,17 +19,19 @@ const TextList = [
 ];
 
 export default function HowWorks() {
+  const { t } = useTranslation();
+
   return (
-    <section className="container how-works">
+    <motion.section {...animPage} className="container how-works">
       <div className="how-works__title">
-        <h1>How does it work?</h1>
-        <span className="small-text">We receive - We prepare - We ship</span>
+        <h1>{t("HowWorks.title")}</h1>
+        <span className="small-text">{t("HowWorks.subtitle")}</span>
       </div>
       <div className="how-works__list">
-        {TextList.map((currT, i) => (
+        {t("HowWorks.textList", { returnObjects: true }).map((currT, i) => (
           <p key={i}>{currT}</p>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

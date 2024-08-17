@@ -8,94 +8,19 @@ import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import useLocalStorage from "../../hooks/use-localstorage";
 import i18n from "../../../i18n";
-
-const languages = ["En", "Ua", "Ru"];
-
-const navigation = [
-  {
-    title: "Home",
-    slug: "/",
-  },
-  {
-    title: "About Us",
-    slug: "/about",
-  },
-  {
-    title: "Price",
-    slug: "/price",
-  },
-  {
-    title: "How does it work?",
-    slug: "/how-works",
-  },
-];
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Header = () => {
   const { t } = useTranslation();
-  const [language, setLanguage] = useLocalStorage("language", "en");
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get("lang");
-
-    if (langParam && ["en", "ua"].includes(langParam)) {
-      setLanguage(langParam);
-      i18n.changeLanguage(langParam);
-    } else {
-      const pathSegments = window.location.pathname.split("/");
-      const lastSegment = pathSegments[pathSegments.length - 1];
-
-      if (lastSegment === "ua") {
-        setLanguage("ua");
-        i18n.changeLanguage("ua");
-      } else {
-        setLanguage("en");
-        i18n.changeLanguage("en");
-      }
-    }
-  }, []);
-
-  const updateUrl = (lang) => {
-    const baseUrl = window.location.origin;
-    const newUrl = `${baseUrl}/${lang}`;
-    window.history.replaceState(null, "", newUrl);
-  };
-
-  const handleLanguageChange = (selectedLanguage) => {
-    // Set language and save to local storage
-    i18n.changeLanguage(selectedLanguage);
-    setLanguage(selectedLanguage);
-    updateUrl(selectedLanguage);
-  };
 
   return (
     <header className="header container">
       <div className="left">
         <img src="/logo.svg" alt="" className="header__logo" />
         <DropDown />
-        <div className="header-trans">
-          <button
-            className={language === "en" ? "active" : ""}
-            onClick={() => handleLanguageChange("en")}
-          >
-            {t("EN")}
-          </button>
-          <span></span>
-          <button
-            className={language === "ua" ? "active" : ""}
-            onClick={() => handleLanguageChange("ua")}
-          >
-            {t("UA")}
-          </button>
-        </div>{" "}
-        <span></span>
-        <button
-          className={language === "ua" ? "active" : ""}
-          onClick={() => handleLanguageChange("ua")}
-        ></button>
       </div>
       <div className="center">
-        {navigation.map((currLink, i) => (
+        {t("Header.navigation", { returnObjects: true }).map((currLink, i) => (
           <NavLink
             to={currLink.slug}
             key={i}
@@ -141,7 +66,7 @@ export const Header = () => {
           </a>
         </div>
         <Button href="/contact" classes="header__button">
-          {t("Contact us")}
+          {t("Button Contact")}
         </Button>
       </div>
     </header>
@@ -149,12 +74,47 @@ export const Header = () => {
 };
 
 const DropDown = () => {
-  const [activeLang, setActiveLang] = useState("En");
+  const [isActive, setIsActive] = useState(false);
+
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useLocalStorage("language", "en");
+  const languages = ["en", "ua", "ru"]; // Example languages
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get("lang");
+
+    // Set language based on URL parameter or fallback to localStorage
+    if (langParam && languages.includes(langParam.toLowerCase())) {
+      if (langParam !== language) {
+        setLanguage(langParam);
+        i18n.changeLanguage(langParam);
+      }
+    } else {
+      // If URL doesn't have a valid lang param, update it with current language
+      updateUrl(language);
+    }
+  }, []);
+
+  const updateUrl = (lang) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("lang", lang);
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.history.replaceState(null, "", newUrl);
+  };
+
+  const handleLanguageChange = (selectedLanguage) => {
+    if (selectedLanguage !== language) {
+      i18n.changeLanguage(selectedLanguage);
+      setLanguage(selectedLanguage);
+      updateUrl(selectedLanguage);
+    }
+  };
 
   return (
-    <div className="dropdown extraBold">
+    <div className="dropdown extraBold" onClick={() => setIsActive(!isActive)}>
       <div className="dropdown__active">
-        <span className="">{activeLang}</span>
+        <span>{language}</span>
         <svg
           className="dropdown__arrow"
           viewBox="0 0 16 15"
@@ -164,17 +124,29 @@ const DropDown = () => {
           <path
             d="M3.33325 5.625L7.99992 9.375L12.6666 5.625"
             stroke="white"
-            stroke-width="0.7"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </div>
-      <div className="dropdown__list">
-        {languages.map((currLang, i) => {
-          currLang !== activeLang && <span>{currLang}</span>;
-        })}
-      </div>
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.div 
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          animate={{ clipPath: "inset(0 0 0% 0)" }}
+          exit={{ clipPath: "inset(0 0 100% 0)" }}
+          className="dropdown__list">
+            {languages.map((currLang, i) => (
+              currLang !== language && (
+                <span onClick={() => handleLanguageChange(currLang.toLowerCase())} key={i}>
+                  {currLang}
+                </span>
+              )
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

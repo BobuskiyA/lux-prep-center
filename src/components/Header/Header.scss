@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
   background-color: $c-white;
 
   .left {
@@ -27,16 +28,34 @@
       color: $c-white;
       padding: 10px;
       cursor: pointer;
+      position: relative;
+      user-select: none;
   
       &__active {
         display: flex;
         align-items: center;
         gap: 4px;
+        text-transform: capitalize;
       }
   
       &__arrow {
         width: 20px;
         height: 21px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        background-color: $c-black;
+        bottom: 1px;
+        left: 0;
+        right: 0;
+        padding: 5px 10px 10px;
+        transform: translateY(100%);
+        text-transform: capitalize;
+
       }
     }
   }

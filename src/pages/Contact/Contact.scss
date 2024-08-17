@@ -1,12 +1,59 @@
 @import "/src/styles/global.scss";
 
 .contact {
-  margin-top: 91px;
-
   &__title {
+    margin: 91px 0 50px;
     padding: 36px 0;
     text-align: center;
     background: url("/public/Pages/Contact.jpg") no-repeat center;
     color: $c-white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 470px;
+    transition: opacity .3s ease;
+    position: relative;
+
+    &--loading {
+      opacity: 0.4;
+    }
+
+    &__succes {
+      text-align: center;
+      margin-top: 10px;
+      width: 470px;
+    } 
+
+    &__error {
+      margin-top: 5px;
+      color: red;
+    }
+
+    &-input {
+      padding: 14px;
+      font-size: 15px;
+      margin-top: 5px;
+
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__textarea {
+        font: inherit;
+        font-size: 15px;
+        min-width: 445px;
+        max-width: 445px;
+        min-height: 154px;
+        max-height: 154px;
+      }
+    }
   }
 }

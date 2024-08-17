@@ -4,23 +4,24 @@ import { Button } from "../../components/Button/Button";
 import "./Home.scss"
 import { animPage } from "../../helpers/animPage";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <motion.section {...animPage} className="home">
       <div className="home__center">
-        <h1>PREP CENTER FOR UK AMAZON SELLERS</h1>
+        <h1>{t("Home.title")}</h1>
 
         <ul>
-          <li>Focused on Private Label</li>
-          <li>Specialized Private Label FBA Services</li>
-          <li>Handling Amazon UK Returns/Removals</li>
-          <li>Storage Solutions</li>
-          <li>Customized Services for Specific Needs</li>
+          {t("Home.list", { returnObjects: true }).map((currList, i) => (
+            <li key={i}>{currList}</li>
+          ))}
         </ul>
 
           <Button href="/contact" color="white" classes="home__button">
-            Contact us
+            {t("Button Contact")}
           </Button>
       </div>
     </motion.section>
