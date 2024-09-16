@@ -153,6 +153,10 @@
           }
         ]
       }
+    },
+    "bottom": {
+      "title": "Important",
+      "text": "<strong>Remember, it is your responsibility to determinate the type of preparation required to prepare and ship your units to Amazon Fulfilment centers.</strong> <br/><br/> For QUALITY CHECK, price will be made depending on the complexity of the product.All prices exclude VAT which will be added at the current UK rate of 20%Storage fees are applicable after 3 working days and charged at £1 per CBM per day. Minimum storage: 1CBM and the cost is £30/month.Free storage not applicable for orders of over 1 CBM, these will need to be reserved and paid monthly in advance <strong>(please check with us the storage availability).</strong>"
     }
   },
   "Contact": {
@@ -171,6 +175,7 @@
         "messageTitle": "Message",
         "messagePlaceholder": "Hello! I would love to start work with you"
       }
-    }
+    },
+    "adressTitle": "Adress"
   }
 }

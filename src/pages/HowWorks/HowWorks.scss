@@ -1,7 +1,6 @@
 @import "/src/styles/global.scss";
 
 .how-works {
-  
   &__title {
     margin-top: 91px;
     display: flex;
@@ -10,6 +9,14 @@
     padding: 36px;
     color: $c-white;
     background: url("/public/Pages/HowWorks.webp") no-repeat center;
+
+    @include mq($tablet-large) {
+      margin-top: 120px;
+    }
+    
+    @include mq() {
+      margin-top: 80px;
+    }
   }
 
   &__list {
@@ -17,5 +24,13 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @include mq($tablet-large) {
+      margin-bottom: 120px;
+    }
+    
+    @include mq() {
+      margin-bottom: 80px;
+    }
   }
 }

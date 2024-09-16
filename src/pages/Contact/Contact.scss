@@ -2,7 +2,7 @@
 
 .contact {
   &__title {
-    margin: 91px 0 50px;
+    margin: 91px 0 30px;
     padding: 36px 0;
     text-align: center;
     background: url("/public/Pages/Contact.webp") no-repeat center;
@@ -11,6 +11,45 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+
+    @include mq($tablet-large) {
+      margin-top: 120px;
+    }
+    
+    @include mq() {
+      margin-top: 80px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 120px;
+    
+    @include mq() {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .adress {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include mq() {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }  
+
+      &__link {
+        font-weight: 400;
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
   }
 
   .form {
@@ -20,6 +59,14 @@
     width: 470px;
     transition: opacity .3s ease;
     position: relative;
+    
+    @include mq($tablet-large) {
+      width: 300px;
+    }
+    
+    @include mq() {
+      width: 100%;
+    }
 
     &--loading {
       opacity: 0.4;
@@ -29,6 +76,10 @@
       text-align: center;
       margin-top: 10px;
       width: 470px;
+      
+      @include mq($tablet-large) {
+        width: auto;
+      }  
     } 
 
     &__error {
@@ -53,6 +104,23 @@
         max-width: 445px;
         min-height: 154px;
         max-height: 154px;
+        
+        @include mq($tablet-large) {
+          min-width: 272px;
+          max-width: 272px;
+        }
+        
+        @include mq() {
+          min-width: 92%;
+          max-width: 92%;
+        }
+      }
+    }
+
+    &-button {
+      @include mq($tablet-large) {
+        padding: 20px;
+        font-size: 20px;
       }
     }
   }

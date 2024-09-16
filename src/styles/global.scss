@@ -25,6 +25,11 @@ a {
     padding-left: 50px;
     padding-right: 50px;
   }
+  
+  @include mq {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .shadow {

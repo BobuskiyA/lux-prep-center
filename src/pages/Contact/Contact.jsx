@@ -50,94 +50,113 @@ export default function Contact() {
   return (
     <motion.section {...animPage} className="container contact">
       <div className="contact__title">
-        <h1>Contact us</h1>
+        <h1>{t("Contact.title")}</h1>
         <span className="light">
-          Always by your side, ready to answer any question
+        {t("Contact.subtitle")}
         </span>
       </div>
-      <form
-        className={classNames("form", {
-          "form--loading": isLoading,
-        })}
-        onSubmit={form.onSubmit(handleSubmit)}
-      >
-        {!isSucces ? (
-          <>
-            <div className="form-input__wrapper">
-              <label className="bold" htmlFor="name">
-                {t("Contact.form.labels.nameTitle")}
-              </label>
-              <input
-                type="text"
-                id="name"
-                placeholder="John"
-                {...form.getInputProps("name")}
-                className="form-input"
-              />
-              {form.errors.name && (
-                <div className="form__error small-text">{form.errors.name}</div>
-              )}
-            </div>
+      <div className="wrapper">
+        <form
+          className={classNames("form", {
+            "form--loading": isLoading,
+          })}
+          onSubmit={form.onSubmit(handleSubmit)}
+        >
+          {!isSucces ? (
+            <>
+              <div className="form-input__wrapper">
+                <label className="bold" htmlFor="name">
+                  {t("Contact.form.labels.nameTitle")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="John"
+                  {...form.getInputProps("name")}
+                  className="form-input"
+                />
+                {form.errors.name && (
+                  <div className="form__error small-text">
+                    {form.errors.name}
+                  </div>
+                )}
+              </div>
 
-            <div className="form-input__wrapper">
-              <label className="bold" htmlFor="email">
-                {t("Contact.form.labels.emailTitle")}
-              </label>
-              <input
-                type="email"
-                id="email"
-                placeholder="john@example.com"
-                {...form.getInputProps("email")}
-                className="form-input"
-              />
-              {form.errors.email && (
-                <div className="form__error small-text">
-                  {form.errors.email}
-                </div>
-              )}
-            </div>
+              <div className="form-input__wrapper">
+                <label className="bold" htmlFor="email">
+                  {t("Contact.form.labels.emailTitle")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="john@example.com"
+                  {...form.getInputProps("email")}
+                  className="form-input"
+                />
+                {form.errors.email && (
+                  <div className="form__error small-text">
+                    {form.errors.email}
+                  </div>
+                )}
+              </div>
 
-            <div className="form-input__wrapper">
-              <label className="bold" htmlFor="subject">
-                {t("Contact.form.labels.subjectTitle")}
-              </label>
-              <input
-                type="text"
-                id="subject"
-                placeholder="Subject"
-                {...form.getInputProps("subject")}
-                className="form-input"
+              <div className="form-input__wrapper">
+                <label className="bold" htmlFor="subject">
+                  {t("Contact.form.labels.subjectTitle")}
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Subject"
+                  {...form.getInputProps("subject")}
+                  className="form-input"
+                />
+              </div>
+
+              <div className="form-input__wrapper">
+                <label className="bold" htmlFor="message">
+                  {t("Contact.form.labels.messageTitle")}
+                </label>
+                <textarea
+                  id="message"
+                  placeholder={t("Contact.form.labels.messagePlaceholder")}
+                  {...form.getInputProps("message")}
+                  className="form-input form-input__textarea"
+                />
+              </div>
+
+              <span className="bold">{t("Contact.form.requiredText")}</span>
+              <button
+                className="form-button bold button button--black"
+                type="submit"
+              >
+                {isLoading ? "..." : t("Contact.form.buttonText")}
+              </button>
+            </>
+          ) : (
+            <div className="form__succes">
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: t("Contact.form.succesText"),
+                }}
               />
             </div>
-
-            <div className="form-input__wrapper">
-              <label className="bold" htmlFor="message">
-                {t("Contact.form.labels.messageTitle")}
-              </label>
-              <textarea
-                id="message"
-                placeholder={t("Contact.form.labels.messagePlaceholder")}
-                {...form.getInputProps("message")}
-                className="form-input form-input__textarea"
-              />
-            </div>
-
-            <span className="bold">{t("Contact.form.requiredText")}</span>
-            <button
-              className="form-button bold button button--black"
-              type="submit"
-            >
-              {isLoading ? "..." : t("Contact.form.buttonText")}
-            </button>
-          </>
-        ) : (
-          <div className="form__succes">
-            <p
-              dangerouslySetInnerHTML={{ __html: t("Contact.form.succesText") }}
-            />
-          </div>
-        )}
-      </form>
+          )}
+        </form>
+        <div className="adress">
+          <h2>{t("Contact.adressTitle")}</h2>
+          <a href="" className="adress__link">
+            36 Combe Avenue
+            <br />
+            Portishead
+            <br />
+            Bristol
+            <br />
+            BS20 6JS
+          </a>
+          <a href="tel:+447503490127">+447503490127</a>
+        </div>
+      </div>
     </motion.section>
   );
 }

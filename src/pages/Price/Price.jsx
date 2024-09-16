@@ -33,6 +33,12 @@ export default function Price() {
           )}
         </div>
       </div>
+      <div className="bottom">
+        <h1 className="upperCase">{t("Price.bottom.title")}</h1>
+        <p
+          dangerouslySetInnerHTML={{ __html: t("Price.bottom.text") }}
+        />
+      </div>
     </motion.section>
   );
 }

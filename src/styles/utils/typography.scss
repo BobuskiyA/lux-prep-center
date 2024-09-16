@@ -37,6 +37,14 @@ h2 {
   font-weight: 800;
   font-size: 36px;
   line-height: 120%;
+
+  @include mq($tablet-large) {
+    font-size: 32px;
+  }
+
+  @include mq {
+    font-size: 30px;
+  }
 }
 
 a {
@@ -62,4 +70,8 @@ a {
 
 .light {
   font-weight: 300;
+}
+
+.upperCase {
+  text-transform: uppercase;
 }

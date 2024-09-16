@@ -30,17 +30,51 @@
       cursor: pointer;
       position: relative;
       user-select: none;
-  
+      
+      @include mq($tablet-large) {
+        padding: 20px;
+      }
+
+      @include mq() {
+        padding: 10px;
+      }
+      
+      h3 {
+        line-height: 100%;
+
+        @include mq($tablet-large) {
+          font-size: 35px;
+        }
+      
+        @include mq() {
+          font-size: 20px;
+        }
+      }
+
       &__active {
         display: flex;
         align-items: center;
         gap: 4px;
         text-transform: capitalize;
+        
+        @include mq($tablet-large) {
+          gap: 10px;
+        }
       }
   
       &__arrow {
         width: 20px;
         height: 21px;
+        
+        @include mq($tablet-large) {
+          width: 34px;
+          height: 34px;
+        }
+        
+        @include mq {
+          width: 20px;
+          height: 21px;
+        }
       }
 
       &__list {
@@ -52,10 +86,20 @@
         bottom: 1px;
         left: 0;
         right: 0;
+        z-index: 100;
         padding: 5px 10px 10px;
         transform: translateY(100%);
         text-transform: capitalize;
 
+        @include mq($tablet-large) {
+          padding: 10px 20px 20px;
+          gap: 20px;
+        }
+        
+        @include mq() {
+          padding: 10px 10px 20px;
+          gap: 15px;
+        }  
       }
     }
   }
@@ -64,7 +108,7 @@
     display: flex;
     gap: 40px;
 
-    @include mq($tablet-large ) {
+    @include mq($laptop) {
       display: none;
     }
 
@@ -78,10 +122,9 @@
     gap: 20px;
     align-items: center;
 
-    @include mq($tablet-large ) {
+    @include mq($laptop) {
       display: none;
     }
-
 
     .socials {
       display: flex;
@@ -95,6 +138,87 @@
           opacity: .6;
         }
       }
+    }
+  }
+
+  .nav {
+    @include mq($laptop, ">") {
+      display: none;
+    }
+
+    &__button {
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+
+      &-icon {
+        width: 100%;
+        height: 100%;
+
+        &--close {
+          display: none;
+        }
+      }
+    }
+
+    &--active {
+      .nav__button {
+        &-icon {
+          &--open {
+            display: none;
+          }
+          
+          &--close {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-body {
+      position: fixed;
+      top: 115px;
+      left: 0;
+      right: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+
+      @include mq {
+        top: 80px;
+      }
+
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .link--active {
+          text-decoration: underline;
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+
+        .header__button {
+          width: 240px;
+          text-align: center;
+          padding: 20px;
+        }
+
+        &-wrapper {
+          display: flex;
+          gap: 10px;
+        }
+      }
+
     }
   }
 }
