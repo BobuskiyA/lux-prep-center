@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 80px;
 
     @include mq($tablet-large) {
       margin-bottom: 120px;
