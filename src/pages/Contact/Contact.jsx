@@ -7,6 +7,8 @@ import { sendMessage } from "../../requests/telegram";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
+import formatFormData from "../../requests/formatFormData";
+
 export default function Contact() {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
@@ -27,18 +29,14 @@ export default function Contact() {
     },
   });
 
-  const handleSubmit = async ({ name, email, subject, message }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
       setIsLoading(true);
-
-      const msg = `
-        Імʼя: ${name}\n
-        Email: ${email}\n
-        Тема: ${subject || "Без теми"}\n
-        Повідомлення: ${message || "Без повідомлення"}
-      `;
-      await sendMessage(msg);
-      form.reset();
+      const formattedData = formatFormData(values);
+      await sendMessage(formattedData);
+      if (values.file) {
+        await sendFile(values.file);
+      }
     } catch (e) {
       console.error(e);
     } finally {
