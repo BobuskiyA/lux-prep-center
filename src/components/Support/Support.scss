@@ -1,0 +1,29 @@
+.support{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+    color: white;
+    right: 2%;
+    bottom: 5%;
+    transition: background-color 0.8s ease, img 0.8s ease;
+    img {
+        position: relative;
+        height: 50%;
+        width: 50%;
+        filter: brightness(1); // Біла фотка
+        transition: filter 0.3s ease;
+    }
+
+    &:hover {
+        background-color: white;
+
+        img {
+            filter: brightness(0); // Чорна фотка
+        }
+    }}

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./Price.scss";
 import { motion } from "framer-motion";
 import { animPage } from "../../helpers/animPage";
+import Support from "../../components/Support/Support";
 
 export default function Price() {
   const { t } = useTranslation();
@@ -39,6 +40,7 @@ export default function Price() {
           dangerouslySetInnerHTML={{ __html: t("Price.bottom.text") }}
         />
       </div>
+      <Support/>
     </motion.section>
   );
 }

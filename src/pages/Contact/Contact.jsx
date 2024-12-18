@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 import formatFormData from "../../requests/formatFormData";
+import Support from "../../components/Support/Support";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -155,6 +156,7 @@ export default function Contact() {
           <a href="tel:+447503490127">+447503490127</a>
         </div>
       </div>
+      <Support/>
     </motion.section>
   );
 }

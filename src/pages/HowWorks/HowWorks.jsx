@@ -4,6 +4,7 @@ import "./HowWorks.scss";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { animPage } from "../../helpers/animPage";
+import Support from "../../components/Support/Support";
 
 const TextList = [
   "1. Receiving Inventory: Accepting shipments from manufacturers, wholesalers, or retailers.",
@@ -32,6 +33,7 @@ export default function HowWorks() {
           <p key={i}>{currT}</p>
         ))}
       </div>
+      <Support/>
     </motion.section>
   );
 }

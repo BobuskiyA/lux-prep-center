@@ -5,6 +5,7 @@ import "./Home.scss"
 import { animPage } from "../../helpers/animPage";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Support from "../../components/Support/Support";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ export default function Home() {
             {t("Button Contact")}
           </Button>
       </div>
+      <Support/>
     </motion.section>
   );
 }
