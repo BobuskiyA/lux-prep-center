@@ -1,3 +1,5 @@
+@import "/src/styles/global.scss";
+
 .support{
     display: flex;
     justify-content: center;
@@ -12,11 +14,17 @@
     right: 2%;
     bottom: 5%;
     transition: background-color 0.8s ease, img 0.8s ease;
+
+    @include mq{
+        width: 80px;
+        height: 80px;
+    }
+
     img {
         position: relative;
         height: 50%;
         width: 50%;
-        filter: brightness(1); // Біла фотка
+        filter: brightness(1); 
         transition: filter 0.3s ease;
     }
 
@@ -24,6 +32,7 @@
         background-color: white;
 
         img {
-            filter: brightness(0); // Чорна фотка
+            filter: brightness(0);
         }
-    }}
+    }
+}
