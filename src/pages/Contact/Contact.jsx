@@ -153,7 +153,7 @@ export default function Contact() {
             <br />
             BS20 6JS
           </a>
-          <a href="tel:+447503490127">+447503490127</a>
+          <a href="https://wa.me/447503490127">+447503490127</a>
         </div>
       </div>
       <Support/>

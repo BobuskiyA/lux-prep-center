@@ -37,7 +37,7 @@ export const Header = () => {
       </div>
       <div className="right">
         <div className="socials">
-          <a href="" target="_blank" className="socials__link">
+          <a href="https://www.instagram.com/luxprepcentre?igsh=MWZkZDB0bHh1bHFq&utm_source=ig_contact_invite" target="_blank" className="socials__link">
             <svg
               width="37"
               height="37"
@@ -51,7 +51,7 @@ export const Header = () => {
               />
             </svg>
           </a>
-          <a href="" target="_blank" className="socials__link">
+          <a href="https://www.facebook.com/share/g/19sUsQrZSi/?mibextid=wwXIfr" target="_blank" className="socials__link">
             <svg
               width="37"
               height="37"
